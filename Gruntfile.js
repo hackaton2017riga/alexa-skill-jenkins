@@ -13,15 +13,15 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     // Replace this with your Lambda ARN
-    var lambdaArn = 'arn:aws:lambda:us-east-1:------------:function:jenkins-broken-build';
+    var lambdaArn = 'arn:aws:lambda:eu-west-1:805833124171:function:FunctionH01';
 
     // Define the configuration for all the tasks
     grunt.initConfig({
         lambda_invoke: {
             default: {
                 options: {
-                    region: 'us-east-1',
-                    profile: 'dev2' // replace with your own profile name
+                    region: 'eu-west-1',
+                    profile: 'default' // replace with your own profile name
                 }
             }
         },
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                 options: {
                     timeout: 6,
                     memory: 128,
-                    profile: 'dev2'
+                    profile: 'default'
                 },
                 arn: lambdaArn
             }
